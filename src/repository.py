@@ -5,6 +5,7 @@ from datetime import datetime
 # Constantes de configuração de arquivos de dados (I/O)
 ARQUIVO_ESTOQUE = 'estoque.json'
 ARQUIVO_LOGS = 'logs.json'
+ARQUIVO_USUARIOS = 'usuarios.json'
 
 def load_data(file_path):
     """
