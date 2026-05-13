@@ -82,9 +82,9 @@ def main_app():
                 if produto_in == "":
                     st.warning("⚠️ Por favor, digite o nome do produto.")
                 else:
-                    # Chama o back-end passando o que o usuário digitou
                     register_entry(produto_in, qtd_in, st.session_state['username'])
-                    st.success(f"✅ {qtd_in}x '{produto_in}' adicionado(s) com sucesso!")
+                    # st.success("...") -> Você pode manter ou tirar o success
+                    st.rerun()
 
     with tab_saida:
         st.subheader("Registrar Saída de Material")
@@ -99,7 +99,8 @@ def main_app():
                 else:
                     sucesso = register_exit(produto_out, qtd_out, st.session_state['username'])
                     if sucesso:
-                        st.success(f"✅ {qtd_out}x '{produto_out}' retirado(s) com sucesso!")
+                        # st.success("...") -> Você pode manter ou tirar
+                        st.rerun() # <-- ADICIONE ESTA LINHA AQUI
                     else:
                         st.error("❌ Erro: Saldo insuficiente ou produto não encontrado.")
 
