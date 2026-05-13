@@ -1,47 +1,55 @@
-# 📦 Sistema de Gestão de Estoque (CLI)
+# 📦 Sistema de Gestão de Almoxarifado (Warehouse Management System)
 
-![Python Version](https://img.shields.io/badge/Python-3.x-blue.svg)
-![Architecture](https://img.shields.io/badge/Architecture-Modular-success.svg)
-![Persistence](https://img.shields.io/badge/Database-JSON-orange.svg)
+Um sistema web robusto desenvolvido em Python para o controle de entrada e saída de materiais em ambientes de estoque logístico e industrial. 
 
-## 🎯 Objetivo do Projeto
+O projeto nasceu com o propósito de aplicar metodologias reais de Engenharia de Software, transformando processos manuais de um almoxarifado em uma aplicação segura, rastreável e à prova de falhas de operação.
 
-Este projeto foi desenvolvido para consolidar conhecimentos avançados de Lógica de Programação, Arquitetura de Software e Desenvolvimento Backend. O foco principal é otimizar rotinas administrativas de almoxarifado, criando um fluxo de dados robusto, seguro e à prova de falhas em um ambiente de interface de linha de comando (CLI).
+## 🚀 O Problema e a Solução
+Em cenários industriais e administrativos, furos de estoque e a falta de rastreabilidade são problemas críticos. Este sistema resolve isso implementando regras de negócio estritas (QA) no back-end, impedindo a retirada de quantidades maiores do que o saldo físico e registrando todas as movimentações em uma trilha de auditoria (Logs).
 
-## 🧠 Destaques de Lógica e Arquitetura
+## 💡 Principais Funcionalidades
 
-Como este projeto prioriza a qualidade do código e padrões de mercado, os seguintes pontos foram implementados:
+- **🔐 Gestão de Acesso (Sessão Web):** Criação de contas e sistema de login utilizando controle de estado (`session_state`), garantindo que apenas usuários registrados operem o sistema.
+- **🛡️ Trava Lógica de Consistência (Fail-Fast):** O motor do Back-end possui validação matemática em tempo real. Se um usuário tentar retirar um material com quantidade superior ao saldo, o sistema bloqueia a transação e alerta o usuário.
+- **📊 Trilha de Auditoria Imutável:** Cada movimentação (Entrada/Saída) gera um log automático registrando: `Data/Hora`, `Produto`, `Quantidade`, `Tipo de Operação` e `Usuário`.
+- **💾 Persistência de Dados (JSON):** Os dados de estoque, usuários e logs são salvos em arquivos `.json` estruturados, com sanitização nativa para evitar quebras de sistema (crashes) na leitura de arquivos vazios.
 
-- **Separation of Concerns:** Código estruturado em módulos independentes (`operations.py`, `repository.py`, `authentication.py`), facilitando a manutenção.
-- **Fail-Fast e Sanitização (QA):** Uso estratégico de blocos `try-except` para interceptar erros de tipagem, impedindo que o sistema sofra *crash*.
-- **Trilha de Auditoria (Audit Trail):** Registro *append-only* em banco de dados local (`logs.json`), gravando data, usuário e movimentações de forma imutável.
-- **Controle de Fluxo Restrito:** Lógica que impede a saída de materiais se o saldo solicitado for maior que o disponível no estoque (`estoque.json`).
+## 🛠️ Tecnologias e Arquitetura
 
-## 🚀 Funcionalidades
+O projeto foi construído seguindo os princípios de **Clean Architecture** (Arquitetura Limpa), desacoplando a interface visual das regras de negócio e da manipulação de dados.
 
-- Autenticação de usuários com bloqueio de segurança após 3 tentativas.
-- Cadastro dinâmico de novas entradas (Upsert).
-- Saída de materiais com validação cíclica de consistência.
-- Geração de relatório consolidado do saldo atual.
+*   **Linguagem:** Python 3
+*   **Interface Web:** Streamlit
+*   **Banco de Dados:** JSON (Local File System)
+*   **Estrutura de Diretórios:**
+    *   `app.py` / `main.py`: Camada de Apresentação (Interface de Usuário).
+    *   `operations.py`: Camada de Regras de Negócio (Lógica, validações matemáticas).
+    *   `repository.py`: Camada de Dados (Leitura, sanitização e gravação dos arquivos JSON).
 
-## 🛠️ Tecnologias Utilizadas
+## 📈 Planejamento e Metodologia Ágil
+Todo o ciclo de desenvolvimento (SDLC) foi gerenciado utilizando o framework **Scrum** com fluxos visuais no **Kanban (Trello)**. 
 
-- **Linguagem:** Python 3.x
-- **Armazenamento:** Arquivos JSON nativos (Persistência I/O)
-- **Metodologia:** Scrum e versionamento via Git/GitHub
-- **Paradigma:** Programação Estruturada com Modularização
+As funcionalidades foram estruturadas através de **User Stories** e os ciclos de entrega priorizaram funcionalidades de maior valor para a operação logística. A qualidade do código (QA) foi acompanhada em cada etapa, desde a arquitetura inicial até os testes de resiliência de dados.
 
-## 💻 Como Executar
+## ⚙️ Como executar o projeto localmente
 
-Certifique-se de ter o Python instalado em sua máquina.
-Clone este repositório:
+Siga os passos abaixo para rodar a aplicação na sua máquina:
+
+1. Clone este repositório:
 ```bash
-git clone [https://github.com/vitorbalco/WarehouseControl-Project.git](https://github.com/vitorbalco/WarehouseControl-Project.git)
+git clone [https://github.com/vitorbalco/Warehouse-Project.git](https://github.com/vitorbalco/Warehouse-Project.git)
+```
+2. Acesse a pasta do projeto:
+```Bash
+cd Warehouse-Project
+```
+3. Instale as dependências necessárias:
+```Bash
+pip install -r requirements.txt
+```
+4. Inicie a aplicação:
+```Bash
+streamlit run app.py
 ```
 
-## Acesse a pasta do projeto e execute:
-```Bash
-cd WarehouseControl-Project
-python main.py
-```
 **Desenvolvido por Vitor Cardoso Balco | Desenvolvedor Back-end | Estudante de Sistemas de Informação**
