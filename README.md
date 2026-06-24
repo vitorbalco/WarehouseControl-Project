@@ -40,7 +40,7 @@ O projeto foi construído seguindo os princípios de **Clean Architecture** (Arq
 
 <div align="center">
   <!-- Vídeo de teste nativo em WebM -->
-  <video src="https://github.com/vitorbalco/WarehouseControl-Project/raw/refs/heads/master/img/TestingProject.webm" controls width="100%"></video>
+  <video src="https://https://raw.githubusercontent.com/vitorbalco/WarehouseControl-Project/master/img/TestingProject.webm)" controls width="100%"></video>
   
   <br><br>
   
@@ -76,11 +76,11 @@ Siga os passos abaixo para rodar a aplicação na sua máquina:
 
 1. Clone este repositório:
 ```bash
-git clone [https://github.com/vitorbalco/Warehouse-Project.git](https://github.com/vitorbalco/Warehouse-Project.git)
+git clone [https://github.com/vitorbalco/WarehouseControl-Project.git](https://github.com/vitorbalco/Warehouse-Project.git)
 ```
 2. Acesse a pasta do projeto:
 ```Bash
-cd Warehouse-Project
+cd WarehouseControl-Project
 ```
 3. Instale as dependências necessárias:
 ```Bash
