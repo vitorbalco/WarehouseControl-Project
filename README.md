@@ -36,18 +36,31 @@ O projeto foi construído seguindo os princípios de **Clean Architecture** (Arq
 
 ---
 
+## 📸 Demonstração da Aplicação
+
+<div align="center">
+  <!-- Vídeo de teste nativo em WebM -->
+  <video src="img/TestingProject.webm" controls width="100%"></video>
+  
+  <br><br>
+  
+  <!-- Print principal do Painel de Controle -->
+  <img src="img/controlpanel.png" alt="Painel de Controle do Sistema" width="100%">
+</div>
+
+---
+
 ## 📈 Planejamento e Metodologia Ágil
 
 Todo o ciclo de desenvolvimento (SDLC) foi gerenciado utilizando o framework **Scrum** com fluxos visuais no Kanban (**Trello**).
 
 As funcionalidades foram estruturadas através de *User Stories* e os ciclos de entrega priorizaram funcionalidades de maior valor para a operação logística. A qualidade do código (QA) foi acompanhada em cada etapa, desde a arquitetura inicial até os testes de resiliência de dados.
 
----
-
-## 📸 Demonstração da Aplicação
-
-<!-- COLOQUE O LINK DO SEU GIF OU IMAGEM AQUI ABAIXO -->
-![Demonstração do Sistema](https://via.placeholder.com/800x450.png?text=Insira+aqui+um+GIF+ou+Print+do+Streamlit+funcionando)
+<div align="center">
+  <!-- Prints do planejamento e do board finalizado dispostos lado a lado -->
+  <img src="img/TabelaScrumPlanejamento.png" alt="Planejamento Inicial do Scrum" width="49%">
+  <img src="img/ProjetoScrumFinalizado.png" alt="Sprint e Projeto Scrum Finalizado" width="49%">
+</div>
 
 ---
 
