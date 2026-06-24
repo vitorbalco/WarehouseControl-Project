@@ -40,7 +40,7 @@ O projeto foi construído seguindo os princípios de **Clean Architecture** (Arq
 
 <div align="center">
   <!-- Vídeo de teste nativo em WebM -->
-  <video src="img/TestingProject.webm" controls width="100%"></video>
+  <video src="https://github.com/vitorbalco/WarehouseControl-Project/raw/refs/heads/master/img/TestingProject.webm" controls width="100%"></video>
   
   <br><br>
   
